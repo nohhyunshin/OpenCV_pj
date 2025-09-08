@@ -1,0 +1,35 @@
+﻿<Window x:Class="OpenCV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenCV"
+        mc:Ignorable="d"
+        Title="Helmet Wearing Status" Height="455" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="365"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="안전이 제일이다! 오늘도 무사히!" FontSize="30" FontWeight="Bold" FontFamily="HYGothic-Extra"
+                       Foreground="#2E86C1"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="5">
+                <GroupBox Header="Data" BorderBrush="DarkGray">
+                    <DataGrid x:Name="DataGridStatus" Height="310" AutoGenerateColumns="False" CanUserSortColumns="True" 
+                              HeadersVisibility="Column" BorderBrush="DarkGray">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="No" Binding="{Binding Idx}" Width="*"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
+                            <DataGridTextColumn Header="Date" Binding="{Binding Time}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
